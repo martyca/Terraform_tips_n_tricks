@@ -3,9 +3,8 @@ locals {
 }
 
 resource "null_resource" "test" {
-    count = 5
+    count = 3
     triggers = {
         cidr = cidrsubnet(local.cidr_block, 8, count.index)
-        plumbus = "florb"
     }
 }
